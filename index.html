@@ -1,0 +1,394 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  .mtx-container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #36394d;
+    font-size: 12pt;
+    line-height: 1.55;
+  }
+
+  .t4-divider {
+    height: 4px;
+    background-color: #084d6e;
+    border-radius: 20px;
+    margin: 20px 0;
+  }
+
+  .mtx-inner-divider {
+    height: 1px;
+    background-color: #084d6e;
+    opacity: 0.3;
+    margin: 25px 0;
+  }
+
+  .mtx-header {
+    background: linear-gradient(to right, #084d6e, #062233);
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+  }
+
+  .mtx-eyebrow {
+    color: #ccaf60;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .mtx-title {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .mtx-subtitle {
+    font-size: 12pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #084d6e;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .mtx-intro {
+    background-color: #f5f7fb;
+    border: 1px solid #e0e5f0;
+    border-radius: 16px;
+    padding: 20px 24px;
+    font-size: 12pt;
+    margin-bottom: 20px;
+  }
+
+  .mtx-level-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e5f0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .mtx-level-card-header {
+    background-color: #084d6e;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 12px 20px;
+    font-size: 12pt;
+  }
+
+  .mtx-level-card-body {
+    padding: 20px;
+  }
+
+  .mtx-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .mtx-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    line-height: 1.55;
+  }
+
+  .mtx-list li::before {
+    content: "\2022";
+    color: #ccaf60;
+    font-size: 1.5em;
+    position: absolute;
+    left: 4px;
+    top: -2px;
+    line-height: 1;
+  }
+
+  .mtx-quote {
+    background-color: #f5f7fb;
+    border-left: 10px solid #ccaf60 !important;
+    margin: 20px 0;
+    padding: 16px 20px;
+    font-weight: 600;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .mtx-form-group {
+    margin-bottom: 15px;
+  }
+
+  .mtx-form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #084d6e;
+  }
+
+  .mtx-input, .mtx-select, .mtx-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11pt;
+    border: 1px solid #e0e5f0;
+    border-radius: 6px;
+    background-color: #f5f7fb;
+    color: #36394d;
+    box-sizing: border-box;
+  }
+
+  .mtx-input:focus, .mtx-select:focus, .mtx-textarea:focus {
+    outline: none;
+    border-color: #084d6e;
+    background-color: #ffffff;
+  }
+
+  .mtx-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .mtx-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: #f5f7fb;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #e0e5f0;
+  }
+
+  .mtx-quiz-btn {
+    display: inline-block;
+    background-color: #084d6e;
+    color: #ffffff;
+    padding: 12px 28px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12pt;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+  }
+
+  .mtx-quiz-btn:hover {
+    background-color: #062233;
+  }
+
+  #mtx-summary-panel {
+    display: none;
+    background-color: #ffffff;
+    border: 2px solid #084d6e;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 30px;
+  }
+
+  .mtx-summary-item {
+    margin-bottom: 16px;
+  }
+
+  .mtx-summary-item h4 {
+    color: #084d6e;
+    margin: 0 0 4px 0;
+    font-size: 11pt;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    .mtx-level-card, .mtx-quiz-btn, .t4-divider, .mtx-header { display: none !important; }
+    #mtx-summary-panel { display: block !important; border: none; padding: 0; }
+  }
+</style>
+<div class="mtx-container">
+  <div class="t4-divider"><br></div>
+  <header class="mtx-header">
+    <div class="mtx-eyebrow">METROTEX CAMPUS</div>
+    <div class="mtx-title">Your Investor Services Action Plan</div>
+  </header>
+
+  <div class="mtx-intro">
+    <p><strong style="color: #084d6e;">Turn What You've Learned Into Your Next Steps</strong></p>
+    <p>Whether you already work with investors or are preparing to serve your first investor client, having a consistent process can help you ask better questions, identify important information, and guide more productive conversations.</p>
+    <p style="margin-bottom:0;"><strong>Your challenge:</strong> Build a practical action plan for your next investor opportunity.</p>
+  </div>
+
+  <form id="mtx-action-plan-form">
+    <!-- Step 1 -->
+    <div class="mtx-level-card">
+      <div class="mtx-level-card-header">Step 1 &mdash; Identify Your Investor Opportunity</div>
+      <div class="mtx-level-card-body">
+        <div class="mtx-form-group">
+          <label for="investor-type">Select the type of investor you'd like to serve:</label>
+          <select id="investor-type" class="mtx-select" required>
+            <option value="">-- Choose an Option --</option>
+            <option value="First-time rental property investors">First-time rental property investors</option>
+            <option value="Investors expanding an existing portfolio">Investors expanding an existing portfolio</option>
+            <option value="Renovation and resale investors">Renovation and resale investors</option>
+            <option value="Commercial property investors">Commercial property investors</option>
+            <option value="Land or specialty property investors">Land or specialty property investors</option>
+            <option value="Another investor type relevant to my business">Another investor type relevant to my business</option>
+          </select>
+        </div>
+        <div class="mtx-form-group">
+          <label for="type-reason">Why did you choose this investor type?</label>
+          <textarea id="type-reason" class="mtx-textarea" rows="2" placeholder="Consider your experience, local market knowledge, or client relationships..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="mtx-level-card">
+      <div class="mtx-level-card-header">Step 2 &mdash; Prepare Your Investor Conversation</div>
+      <div class="mtx-level-card-body">
+        <p>Write your three priority discovery questions for client consultations:</p>
+        <div class="mtx-form-group">
+          <label for="q-goals">1. Investment Goals Question:</label>
+          <input type="text" id="q-goals" class="mtx-input" placeholder="e.g., Are you primarily interested in ongoing income or long-term appreciation?">
+        </div>
+        <div class="mtx-form-group">
+          <label for="q-finance">2. Financial Readiness Question:</label>
+          <input type="text" id="q-finance" class="mtx-input" placeholder="e.g., How much capital are you prepared to invest?">
+        </div>
+        <div class="mtx-form-group">
+          <label for="q-risk">3. Risk and Responsibilities Question:</label>
+          <input type="text" id="q-risk" class="mtx-input" placeholder="e.g., How involved do you want to be in day-to-day management?">
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="mtx-level-card">
+      <div class="mtx-level-card-header">Step 3 &mdash; Create Your Property Evaluation Checklist</div>
+      <div class="mtx-level-card-body">
+        <label style="font-weight:600; color:#084d6e; display:block; margin-bottom:10px;">Select the TWO areas you would investigate first:</label>
+        <div class="mtx-checkbox-group">
+          <label class="mtx-checkbox-label"><input type="checkbox" name="eval-priorities" value="Property fit"> Property fit (Type & strategy alignment)</label>
+          <label class="mtx-checkbox-label"><input type="checkbox" name="eval-priorities" value="Income potential"> Income potential (Existing & projected revenue)</label>
+          <label class="mtx-checkbox-label"><input type="checkbox" name="eval-priorities" value="Expenses and financial exposure"> Expenses and financial exposure (Operating costs & reserves)</label>
+          <label class="mtx-checkbox-label"><input type="checkbox" name="eval-priorities" value="Property-specific risks"> Property-specific risks (Leases, condition, location, regulations)</label>
+          <label class="mtx-checkbox-label"><input type="checkbox" name="eval-priorities" value="Due diligence"> Due diligence (Documents, records, & specialists)</label>
+        </div>
+        <div class="mtx-form-group">
+          <label for="eval-reason">Why would you prioritize those two areas?</label>
+          <textarea id="eval-reason" class="mtx-textarea" rows="2" placeholder="Briefly explain your reasoning..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="mtx-level-card">
+      <div class="mtx-level-card-header">Step 4 &mdash; Commit to Your Next Action</div>
+      <div class="mtx-level-card-body">
+        <div class="mtx-form-group">
+          <label for="action-choice">Select one action to complete within the next 30 days:</label>
+          <select id="action-choice" class="mtx-select" required>
+            <option value="">-- Choose an Action --</option>
+            <option value="Develop a list of investor discovery questions to use during client consultations.">Develop a list of investor discovery questions to use during client consultations.</option>
+            <option value="Review three local investment property listings and identify information that would need verification.">Review three local investment property listings and identify information that would need verification.</option>
+            <option value="Connect with a property manager, lender, accountant, attorney, or other qualified professional.">Connect with a property manager, lender, accountant, attorney, or other qualified professional.</option>
+            <option value="Create a property evaluation checklist for the investment type I want to serve.">Create a property evaluation checklist for the investment type I want to serve.</option>
+            <option value="Schedule a conversation with a current or prospective investor client.">Schedule a conversation with a current or prospective investor client.</option>
+            <option value="Identify an investment property type in my market that I want to understand more thoroughly.">Identify an investment property type in my market that I want to understand more thoroughly.</option>
+          </select>
+        </div>
+        <div class="mtx-form-group">
+          <label for="action-timeframe">Target Completion Timeframe:</label>
+          <input type="text" id="action-timeframe" class="mtx-input" placeholder="e.g., By Friday, November 15">
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="mtx-quiz-btn" onclick="generateActionPlan()">Generate My Action Plan</button>
+  </form>
+
+  <!-- Output Summary Panel -->
+  <div id="mtx-summary-panel">
+    <div class="mtx-subtitle" style="margin-top:0;">Your Completed Action Plan</div>
+    <div class="mtx-inner-divider"><br></div>
+
+    <div class="mtx-summary-item">
+      <h4>Target Investor Opportunity</h4>
+      <p id="sum-investor-type">---</p>
+      <p style="font-style: italic; color:#555;" id="sum-type-reason"></p>
+    </div>
+
+    <div class="mtx-summary-item">
+      <h4>Priority Discovery Questions</h4>
+      <ul class="mtx-list">
+        <li><strong>Goals:</strong> <span id="sum-q-goals">---</span></li>
+        <li><strong>Financials:</strong> <span id="sum-q-finance">---</span></li>
+        <li><strong>Risk/Management:</strong> <span id="sum-q-risk">---</span></li>
+      </ul>
+    </div>
+
+    <div class="mtx-summary-item">
+      <h4>Evaluation Priorities</h4>
+      <p id="sum-eval-priorities">---</p>
+      <p style="font-style: italic; color:#555;" id="sum-eval-reason"></p>
+    </div>
+
+    <div class="mtx-summary-item">
+      <h4>30-Day Commitment</h4>
+      <p><strong>Action:</strong> <span id="sum-action-choice">---</span></p>
+      <p><strong>Target Date:</strong> <span id="sum-action-timeframe">---</span></p>
+    </div>
+
+    <blockquote class="mtx-quote">
+      Purpose Before Property. Strategy Before Search.
+    </blockquote>
+
+    <button class="mtx-quiz-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="t4-divider"><br></div>
+</div>
+
+<script>
+  function generateActionPlan() {
+    // Extract inputs
+    const investorType = document.getElementById('investor-type').value || "Not specified";
+    const typeReason = document.getElementById('type-reason').value || "";
+    
+    const qGoals = document.getElementById('q-goals').value || "Not specified";
+    const qFinance = document.getElementById('q-finance').value || "Not specified";
+    const qRisk = document.getElementById('q-risk').value || "Not specified";
+
+    const checkboxes = document.querySelectorAll('input[name="eval-priorities"]:checked');
+    let evalPriorities = [];
+    checkboxes.forEach((cb) => evalPriorities.push(cb.value));
+    const evalReason = document.getElementById('eval-reason').value || "";
+
+    const actionChoice = document.getElementById('action-choice').value || "Not specified";
+    const actionTimeframe = document.getElementById('action-timeframe').value || "Not specified";
+
+    // Populate summary panel
+    document.getElementById('sum-investor-type').innerText = investorType;
+    document.getElementById('sum-type-reason').innerText = typeReason ? `"${typeReason}"` : "";
+
+    document.getElementById('sum-q-goals').innerText = qGoals;
+    document.getElementById('sum-q-finance').innerText = qFinance;
+    document.getElementById('sum-q-risk').innerText = qRisk;
+
+    document.getElementById('sum-eval-priorities').innerText = evalPriorities.length > 0 ? evalPriorities.join(', ') : "None selected";
+    document.getElementById('sum-eval-reason').innerText = evalReason ? `"${evalReason}"` : "";
+
+    document.getElementById('sum-action-choice').innerText = actionChoice;
+    document.getElementById('sum-action-timeframe').innerText = actionTimeframe;
+
+    // Show panel and scroll into view
+    const summaryPanel = document.getElementById('mtx-summary-panel');
+    summaryPanel.style.display = 'block';
+    summaryPanel.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
